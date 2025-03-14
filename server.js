@@ -4,19 +4,25 @@ const axios = require("axios");
 const bonjour = require("bonjour")();
 const FormData = require("form-data");
 const fs = require("fs");
+const os = require("os");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json());
-app.use(express.static("public"));
+// ✅ Use `/tmp/` on Vercel, and `uploads/` on Windows
+const uploadDir = os.platform() === "win32" ? path.join(__dirname, "uploads") : "/tmp/";
 
-// Configure Multer (Temporary Storage in `/tmp/`)
+// ✅ Ensure `uploads/` exists on Windows
+if (os.platform() === "win32" && !fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
+
+// ✅ Configure Multer (Handles file uploads properly)
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "/tmp/");  // Vercel requires file storage in `/tmp/`
+        cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + "-" + file.originalname);
