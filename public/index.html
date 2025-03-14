@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Printing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🌍 Cloud Printing System</h1>
+
+        <!-- Upload File Form -->
+        <form id="uploadForm">
+            <label class="custom-file-upload">
+                <input type="file" id="fileInput" required>
+                📂 Choose File
+            </label>
+            <button type="submit" class="upload-btn">🚀 Upload</button>
+        </form>
+
+        <p id="uploadStatus"></p>
+
+        <hr>
+
+        <!-- Printers List -->
+        <h2>Available Printers</h2>
+        <ul id="printersList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

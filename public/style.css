@@ -1,0 +1,133 @@
+/* Body Styling */
+body {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Custom File Upload Button */
+.custom-file-upload {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-file-upload:hover {
+    transform: scale(1.1);
+}
+
+/* Hide Default File Input */
+input[type="file"] {
+    display: none;
+}
+
+/* Upload Button */
+.upload-btn {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.upload-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.upload-btn:active {
+    transform: scale(0.95);
+}
+
+/* Upload Status */
+#uploadStatus {
+    font-size: 1rem;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Upload Success Animation */
+.success {
+    color: #76ff03;
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+/* Upload Error Animation */
+.error {
+    color: #ff1744;
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+/* Printers List */
+.printers-list {
+    list-style: none;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.printers-list li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.printers-list li:hover {
+    transform: scale(1.05);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
